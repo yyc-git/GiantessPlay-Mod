@@ -1,0 +1,21 @@
+10.1.4
+D:\Github\GiantessPlay-Mod\node_modules\meta3d-commonlib
+1 -bs-package-output commonjs:lib\js:.bs.js -bs-package-output es6-global:lib\es6_global:.bs.js
+bsconfig.json	0x1.a4b55126aafc7p+30
+src	0x1.a4d8d73c1ba27p+30
+src\test	0x1.a4d8d73c27ea3p+30
+src\test\bdd	0x1.a4d8d73c2afc7p+30
+src\structure	0x1.a4d8d73c18908p+30
+src\structure\utils	0x1.a4d8d73c1a9c6p+30
+src\structure\tuple	0x1.a4d8d73c178a7p+30
+src\structure\sparse_map	0x1.a4d8d73c0f5acp+30
+src\structure\hash_map	0x1.a4d8d73c09509p+30
+src\scene_graph	0x1.a4d8d73bea961p+30
+src\scene_graph\component	0x1.a4d8d73bfb09cp+30
+src\scene_graph\component\test	0x1.a4d8d73bfb09cp+30
+src\math	0x1.a4d8d73be020dp+30
+src\log	0x1.a4d8d73be020dp+30
+src\copy	0x1.a4d8d73bd8f3p+30
+src\contract	0x1.a4d8d73bd8f3p+30
+===
+D:\Github\GiantessPlay-Mod\node_modules\rescript\win32\rescript.exe	0x1.a4d8e61e2d238p+30

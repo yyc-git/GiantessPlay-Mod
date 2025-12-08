@@ -1,0 +1,24 @@
+{
+	"name": "giantessplay-mod",
+	"private": true,
+	"license": "",
+	"scripts": {
+		"clean": "lerna clean",
+		"bootstrap": "lerna bootstrap"
+	},
+	"workspaces": [
+		"protocols/*",
+		"mods/*",
+		"services/*",
+		"defaults/*",
+		"types/*"
+	],
+	"config": {
+		"commitizen": {
+			"path": "node_modules/cz-customizable"
+		}
+	},
+	"devDependencies": {
+		"lerna": "^4.0.0"
+	}
+}

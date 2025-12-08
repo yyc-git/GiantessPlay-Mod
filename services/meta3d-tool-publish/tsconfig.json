@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"target": "es6",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"resolveJsonModule": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"jsx": "react",
+		// "noEmit": true,
+		// "noUnusedLocals": true,
+		// "noUnusedParameters": true,
+		// "noImplicitReturns": true,
+		"lib": [
+			"DOM",
+			"ESNext",
+		],
+		"types": [
+			"node",
+			"jest"
+		],
+		// "strict": true
+	},
+	"include": [
+		"./src",
+		"./test",
+		"./index.d.ts"
+	]
+}
