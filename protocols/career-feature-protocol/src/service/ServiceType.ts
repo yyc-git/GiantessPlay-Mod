@@ -1,10 +1,28 @@
-// import { careerFeatureData } from "frontend/src/scene3d_layer/script/scene/scene_city/data/build/CareerFeatureData"
+import { characterType, state, rate } from "types/src/CommonType"
+import { api } from "types/src/APIType"
 
-export type careerFeatureData = any
+export enum category {
+	Number,
+	Mechanism,
+}
+
+export type careerFeatureValue = number | any
+
+export type careerFeatureName = string
+
+export type careerFeatureData = {
+	name: careerFeatureName,
+	positive: boolean,
+	category: category,
+	characterType: characterType,
+	rate: rate,
+	getDescriptionFunc: (state: state, value: careerFeatureValue) => string,
+	generateRandomValueFunc: (state: state) => careerFeatureValue,
+	selectRandomConditionFunc?: (state: state, data: Array<careerFeatureData>) => boolean,
+	applyFunc: (state: state, characterType: characterType, value: careerFeatureValue, name: careerFeatureName) => Promise<state>,
+	deapplyFunc?: (state: state, characterType: characterType, name: careerFeatureName) => Promise<state>,
+}
 
 export type service = {
-	// init?: any,
-	// dispose?: any,
-
-	getFeatureData: (api, state) => careerFeatureData,
+	getFeatureData: (api: api, state: state) => careerFeatureData,
 }

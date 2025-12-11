@@ -10,8 +10,7 @@
 		"protocols/*",
 		"mods/*",
 		"services/*",
-		"defaults/*",
-		"types/*"
+		"defaults/*"
 	],
 	"config": {
 		"commitizen": {

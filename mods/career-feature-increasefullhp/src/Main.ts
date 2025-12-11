@@ -1,8 +1,12 @@
+import { service, category } from "career-feature-protocol/src/service/ServiceType"
+import { state } from "career-feature-protocol/src/state/StateType"
+import { variableTextData, characterType, rate, getBlockService as getBlockServiceBlockManager, createBlockState as createBlockStateBlockManager, usedGirlEnum } from "types/src/CommonType"
+
 export enum languageVariableKey {
     Description
 }
 
-let _getTextDataByVariable = (): any => {
+let _getTextDataByVariable = (): variableTextData => {
     return {
         ["Chinese"]: {
             [languageVariableKey.Description]: (value) => `生命上限增加${value}%`
@@ -13,19 +17,19 @@ let _getTextDataByVariable = (): any => {
     }
 }
 
+export let getName = () => "IncreaseFullHp"
 
-export let getBlockService = (api) => {
+export let getBlockService: getBlockServiceBlockManager<
+    service
+> = (api) => {
     return {
         getFeatureData: (api, state) => {
             return {
-                name: "IncreaseFullHp",
+                name: getName(),
                 positive: true,
-                // category: category.Number,
-                // characterType: characterType.Both,
-                // rate: rate.Middle2,
-                category: 0,
-                characterType: 2,
-                rate: 0.3,
+                category: category.Number,
+                characterType: characterType.Both,
+                rate: rate.Middle2,
                 getDescriptionFunc: (state, value) => {
                     return api.getLanguageDataByData(state, _getTextDataByVariable(), languageVariableKey.Description)(api.NumberUtils.convertDecimalToPercent(value, 3))
                 },
@@ -34,16 +38,15 @@ export let getBlockService = (api) => {
                 },
                 applyFunc: (state, characterType_, value, name) => {
                     switch (characterType_) {
-                        case 1:
+                        case characterType.LittleMan:
                             state = api.LittleManBuildUtils.setHp(state, (state, hp) => {
                                 return hp * (1 + value)
                             }, true)
                             break
-                        case 0:
+                        case characterType.Giantess:
                             state = api.GiantessBuildUtils.setFullHp(state, (state, hp) => {
                                 return hp * (1 + value)
-                                // }, true, usedGirlEnum.PlayerGirl)
-                            }, true, "PlayerGirl")
+                            }, true, usedGirlEnum.PlayerGirl)
                             break
                     }
 
@@ -54,6 +57,8 @@ export let getBlockService = (api) => {
     }
 }
 
-export let createBlockState = (api) => {
+export let createBlockState: createBlockStateBlockManager<
+    state
+> = (api) => {
     return null
 }

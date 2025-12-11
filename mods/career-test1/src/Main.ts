@@ -1,8 +1,13 @@
+import { service } from "career-protocol/src/service/ServiceType"
+import { state } from "career-protocol/src/state/StateType"
+import { getBlockService as getBlockServiceBlockManager, createBlockState as createBlockStateBlockManager, textData, characterType } from "types/src/CommonType"
+import { modProtocolName } from "types/src/ModType"
+
 export enum languageKey {
     Title,
 }
 
-let _getTextData = (): any => {
+let _getTextData = (): textData => {
     return {
         ["Chinese"]: {
             [languageKey.Title]: "测试1"
@@ -13,15 +18,16 @@ let _getTextData = (): any => {
     }
 }
 
-
 // TODO move to utils
-export let getCareerFeatureProtocolName = () => "career-feature-protocol"
+export let getCareerFeatureProtocolName = () => modProtocolName.CareerProtocol
 
 export let getIncreaseFullHpBlockName = () => "career-feature-increasefullhp"
 
 export let getIncreaseDamageByCoinBlockName = () => "career-feature-increasedamagebycoin"
 
-export let getBlockService = (api) => {
+export let getBlockService: getBlockServiceBlockManager<
+    service
+> = (api) => {
     return {
         getCareerData: (api, state) => {
             return {
@@ -34,32 +40,17 @@ export let getBlockService = (api) => {
                 needGem: 1000,
 
                 getCareerFeatureData: (state) => api.MutableRecordUtils.createFromObject({
-                    [api.blockAPI.getBlockService(state, getCareerFeatureProtocolName(), getIncreaseFullHpBlockName()).getFeatureData(api, state).name]: 1,
-                    [api.blockAPI.getBlockService(state, getCareerFeatureProtocolName(), getIncreaseDamageByCoinBlockName()).getFeatureData(api, state).name]: 0.01,
-                    // ["IncreaseRestoreHpStrength"]: 1,
-                    // ["ReduceDamageButIncreaseWhenDamaged"]: [1, 0.05, 20],
+                    [api.getCareerFeatureName(api, state, getIncreaseFullHpBlockName())]: 1,
+                    [api.getCareerFeatureName(api, state, getIncreaseDamageByCoinBlockName())]: 0.01
                 })
             }
         },
-        getCharacterType: () => 2,
+        getCharacterType: () => characterType.Both,
     }
 }
 
-export let createBlockState = (api) => {
-    // return createState(api)
-    return null
+export let createBlockState: createBlockStateBlockManager<
+    state
+> = (api) => {
+    return {}
 }
-
-// export let getBlockInfo = (api) => {
-//     return {
-//         protocolName: "career-protocol",
-//         blockName: "career-test1",
-//         /*! title should be unique
-//         *
-//         */
-//         title: "Career->受虐狂",
-//         author: "官方",
-//         category: "Career",
-//         version: "0.0.1",
-//     }
-// }
