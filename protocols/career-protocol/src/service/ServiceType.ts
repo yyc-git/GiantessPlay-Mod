@@ -5,16 +5,8 @@ import { characterType } from "types/src/CommonType";
 
 export type careerData = {
 	title: string,
-
-	// TODO restore?
-	imageSrc?: string,
-	imageResourceId?: string,
-	soundResourceId?: string,
-	glbResourceId?: string,
-
-
+	iconId: string,
 	needGem: number,
-
 
 	getCareerFeatureData: (state: state) => Record<
 		careerFeatureName, careerFeatureValue

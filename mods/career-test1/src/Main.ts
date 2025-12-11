@@ -1,7 +1,6 @@
 import { service } from "career-protocol/src/service/ServiceType"
 import { state } from "career-protocol/src/state/StateType"
-import { getBlockService as getBlockServiceBlockManager, createBlockState as createBlockStateBlockManager, textData, characterType } from "types/src/CommonType"
-import { modProtocolName } from "types/src/ModType"
+import { getBlockService as getBlockServiceBlockManager, createBlockState as createBlockStateBlockManager, textData, characterType, needGem } from "types/src/CommonType"
 
 export enum languageKey {
     Title,
@@ -18,9 +17,6 @@ let _getTextData = (): textData => {
     }
 }
 
-// TODO move to utils
-export let getCareerFeatureProtocolName = () => modProtocolName.CareerProtocol
-
 export let getIncreaseFullHpBlockName = () => "career-feature-increasefullhp"
 
 export let getIncreaseDamageByCoinBlockName = () => "career-feature-increasedamagebycoin"
@@ -33,11 +29,9 @@ export let getBlockService: getBlockServiceBlockManager<
             return {
                 title: api.getLanguageDataByData(state, _getTextData(), languageKey.Title),
 
-                imageResourceId: "career_test1_icon",
-                soundResourceId: "career_test1_sound",
-                glbResourceId: "career_test1_glb",
+                iconId: "career_test1_icon",
 
-                needGem: 1000,
+                needGem: needGem.Middle,
 
                 getCareerFeatureData: (state) => api.MutableRecordUtils.createFromObject({
                     [api.getCareerFeatureName(api, state, getIncreaseFullHpBlockName())]: 1,

@@ -37,6 +37,38 @@ export enum rate {
     Must = 1,
 }
 
+export enum needGem {
+    Zero = 0,
+    // VeryLow = 500,
+    // // Low = 5000,
+    // Low = 1000,
+    // // Middle = 10000,
+    // Middle = 2000,
+    // // High = 20000,
+    // // VeryHigh = 40000,
+    // // MostHigh = 80000,
+    // High = 4000,
+    // VeryHigh = 8000,
+
+    // MostHigh = 50000,
+    VeryLow = 250,
+    // Low = 5000,
+    Low = 500,
+    // Middle = 10000,
+    Middle = 1000,
+    // High = 20000,
+    // VeryHigh = 40000,
+    // MostHigh = 80000,
+    High = 2000,
+    VeryHigh = 4000,
+    VeryHigh2 = 6000,
+    VeryHigh3 = 8000,
+
+    // MostHigh = 80000,
+    // MostHigh = 50000,
+    MostHigh = 10000,
+}
+
 export type getBlockService<blockService> = (api: api) => blockService
 
 export type createBlockState<blockState> = (api: api) => blockState
