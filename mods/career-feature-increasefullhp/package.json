@@ -4,12 +4,12 @@
     "main": "./dist/static/js/main.js",
     "mod": {
         "protocolName": "career-feature-protocol",
-        "author": "官方",
-        "displayName_cn": "测试2",
-        "displayName_en": "Test 2",
-        "repoLink": "https://github.com/yyc-git/GiantessPlay",
-        "description_cn": "描述2",
-        "description_en": "Description 2",
+        "author": "Official",
+        "displayName_cn": "增加生命上限",
+        "displayName_en": "Maximum health increased",
+        "repoLink": "https://github.com/yyc-git/GiantessPlay-Mod/tree/main/mods/career-feature-increasefullhp",
+        "description_cn": "描述",
+        "description_en": "Description",
         "icon": "./dist/other/icon.jpg",
         "isPublic": true
     },

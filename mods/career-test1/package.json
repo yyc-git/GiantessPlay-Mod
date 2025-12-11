@@ -4,12 +4,12 @@
     "main": "./dist/static/js/main.js",
     "mod": {
         "protocolName": "career-protocol",
-        "author": "官方",
-        "displayName_cn": "测试1",
-        "displayName_en": "Test 1",
-        "repoLink": "https://github.com/yyc-git/GiantessPlay",
-        "description_cn": "描述1",
-        "description_en": "Description 1",
+        "author": "Official",
+        "displayName_cn": "职业（测试1）",
+        "displayName_en": "Career(Test 1)",
+        "repoLink": "https://github.com/yyc-git/GiantessPlay-Mod/tree/main/mods/career-test1",
+        "description_cn": "描述",
+        "description_en": "Description",
         "icon": "./dist/other/icon.jpg",
         "isPublic": true,
         "dependentMods": [

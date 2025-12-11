@@ -4,12 +4,12 @@
     "main": "./dist/static/js/main.js",
     "mod": {
         "protocolName": "career-feature-protocol",
-        "author": "官方",
-        "displayName_cn": "测试3",
-        "displayName_en": "Test 3",
-        "repoLink": "https://github.com/yyc-git/GiantessPlay",
-        "description_cn": "描述3",
-        "description_en": "Description 3",
+        "author": "Official",
+        "displayName_cn": "每持有金币，伤害增加",
+        "displayName_en": "For every coins held, damage increases",
+        "repoLink": "https://github.com/yyc-git/GiantessPlay-Mod/tree/main/mods/career-feature-increasedamagebycoin",
+        "description_cn": "描述",
+        "description_en": "Description",
         "icon": "./dist/other/icon.jpg",
         "isPublic": true
     },
