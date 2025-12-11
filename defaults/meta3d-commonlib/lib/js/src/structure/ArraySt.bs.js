@@ -88,6 +88,20 @@ function traverseReducePromiseM(arr, func, param) {
   }
 }
 
+function _traverseReducePromiseIM(arr, func, param, index) {
+  if (arr.length === 0) {
+    return Promise.resolve(param);
+  } else {
+    return PromiseSt$Meta3dCommonlib.bind(func(param, Caml_array.get(arr, 0), index), (function (h) {
+                  return _traverseReducePromiseIM(Js_array.sliceFrom(1, arr), func, h, index + 1 | 0);
+                }));
+  }
+}
+
+function traverseReducePromiseIM(arr, func, param) {
+  return _traverseReducePromiseIM(arr, func, param, 0);
+}
+
 function traverseReduceResultM(arr, func, param) {
   if (arr.length === 0) {
     return Result$Meta3dCommonlib.succeed(param);
@@ -241,6 +255,8 @@ exports.traverseResultM = traverseResultM;
 exports._id = _id;
 exports.sequenceResultM = sequenceResultM;
 exports.traverseReducePromiseM = traverseReducePromiseM;
+exports._traverseReducePromiseIM = _traverseReducePromiseIM;
+exports.traverseReducePromiseIM = traverseReducePromiseIM;
 exports.traverseReduceResultM = traverseReduceResultM;
 exports.unsafeGetFirst = unsafeGetFirst;
 exports.getFirst = getFirst;

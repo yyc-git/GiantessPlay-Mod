@@ -5,7 +5,7 @@ import fs from "fs"
 import path from "path"
 import { fileJson } from "meta3d";
 import moment from "moment";
-import { isNullable } from "meta3d-commonlib-ts/src/NullableUtils";
+import { getWithDefault, isNullable } from "meta3d-commonlib-ts/src/NullableUtils";
 
 
 let _throwError = (msg: string): never => {
@@ -161,6 +161,10 @@ let _getPublishedCollectionName = (fileType: "extension" | "contribute") => {
 
 
 let _getFiles = (dir, filelist = []) => {
+    if (!fs.existsSync(dir)) {
+        return filelist;
+    }
+
     const files = fs.readdirSync(dir);
     filelist = filelist || [];
     files.forEach((file) => {
@@ -255,17 +259,21 @@ export let publish = (
                     version: packageJson.version,
 
                     protocolName: modJson.protocolName,
-                    protocolVersion: modJson.protocolVersion,
+                    // protocolVersion: modJson.protocolVersion,
                     author: modJson.author,
                     // category: modJson.category,
-                    displayName: modJson.displayName,
+                    displayName_cn: getWithDefault(modJson.displayName_cn, modJson.displayName_en),
+                    displayName_en: getWithDefault(modJson.displayName_en, modJson.displayName_cn),
                     repoLink: modJson.repoLink,
-                    description: modJson.description,
+                    description_cn: getWithDefault(modJson.description_cn, modJson.description_en),
+                    description_en: getWithDefault(modJson.description_en, modJson.description_cn),
                     icon: _readBase64(modJson.icon),
 
                     lastPublishTime: moment.now(),
 
                     isPublic: modJson.isPublic,
+
+                    dependentMods: getWithDefault(modJson.dependentMods, []),
 
                     fileID,
                     // key: handleKeyToLowercase(account)

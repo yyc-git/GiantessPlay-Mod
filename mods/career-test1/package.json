@@ -4,13 +4,18 @@
     "main": "./dist/static/js/main.js",
     "mod": {
         "protocolName": "career-protocol",
-        "protocolVersion": "^0.0.1",
         "author": "官方",
-        "displayName": "测试1",
+        "displayName_cn": "测试1",
+        "displayName_en": "Test 1",
         "repoLink": "https://github.com/yyc-git/GiantessPlay",
-        "description": "描述1",
+        "description_cn": "描述1",
+        "description_en": "Description 1",
         "icon": "./dist/other/icon.jpg",
-        "isPublic": false
+        "isPublic": true,
+        "dependentMods": [
+            "career-feature-increasefullhp",
+            "career-feature-increasedamagebycoin"
+        ]
     },
     "scripts": {
         "watch": "tsc -w -noEmit",

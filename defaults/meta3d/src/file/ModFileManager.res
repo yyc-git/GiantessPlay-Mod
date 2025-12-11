@@ -211,7 +211,8 @@ let _getResourceId = assetPath => {
 let _parseAssets = ((setFunc, convertFunc), stateData, start, end, assetPaths, assetFilesData) => {
   let imageFilesData = assetFilesData->ArraySt.slice(start, end)
 
-  imageFilesData->ArraySt.reduceOneParami((. stateData, fileData, index) => {
+  // imageFilesData->ArraySt.reduceOneParami((. stateData, fileData, index) => {
+  imageFilesData->ArraySt.traverseReducePromiseIM((. stateData, fileData, index) => {
     convertFunc(fileData)->Js.Promise.then_(data => {
       setFunc(stateData, _getResourceId(assetPaths[index]), data)->Js.Promise.resolve
     }, _)

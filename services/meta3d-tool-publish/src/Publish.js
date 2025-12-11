@@ -142,6 +142,9 @@ let _getPublishedCollectionName = (fileType) => {
 //         })
 // }
 let _getFiles = (dir, filelist = []) => {
+    if (!fs_1.default.existsSync(dir)) {
+        return filelist;
+    }
     const files = fs_1.default.readdirSync(dir);
     filelist = filelist || [];
     files.forEach((file) => {
@@ -205,15 +208,18 @@ getModDataFunc, setModDataFunc, getFileIDFunc], packageFilePath, distFilePath, a
                 name: packageJson.name,
                 version: packageJson.version,
                 protocolName: modJson.protocolName,
-                protocolVersion: modJson.protocolVersion,
+                // protocolVersion: modJson.protocolVersion,
                 author: modJson.author,
                 // category: modJson.category,
-                displayName: modJson.displayName,
+                displayName_cn: (0, NullableUtils_1.getWithDefault)(modJson.displayName_cn, modJson.displayName_en),
+                displayName_en: (0, NullableUtils_1.getWithDefault)(modJson.displayName_en, modJson.displayName_cn),
                 repoLink: modJson.repoLink,
-                description: modJson.description,
+                description_cn: (0, NullableUtils_1.getWithDefault)(modJson.description_cn, modJson.description_en),
+                description_en: (0, NullableUtils_1.getWithDefault)(modJson.description_en, modJson.description_cn),
                 icon: _readBase64(modJson.icon),
                 lastPublishTime: moment_1.default.now(),
                 isPublic: modJson.isPublic,
+                dependentMods: (0, NullableUtils_1.getWithDefault)(modJson.dependentMods, []),
                 fileID,
                 // key: handleKeyToLowercase(account)
                 key,
