@@ -1,5 +1,5 @@
 import { characterType, nullable, state, usedGirl } from "./CommonType"
-import { careerFeatureName } from "career-feature-protocol/src/service/ServiceType"
+import { careerFeatureName, careerFeatureValue } from "career-feature-protocol/src/service/ServiceType"
 import { blockName } from "./ModType"
 
 type NumberUtils = {
@@ -9,6 +9,15 @@ type NumberUtils = {
 
 type MutableRecordUtils = {
     createFromObject: (obj: Object) => Object,
+}
+
+type NullableUtils = {
+    getExn: <T>(nullableValue: nullable<T>) => T,
+    return_: <T>(value: T) => nullable<T>,
+    isNullable: <T>(nullableValue: nullable<T>) => boolean,
+    getWithDefault: <T>(nullableValue: nullable<T>, default_: T) => T,
+    getWithDefaultFunc: <T>(nullableValue: nullable<T>, getDefaultFunc: () => T) => T,
+    getEmpty: <T>() => nullable<T>,
 }
 
 type computeFunc = (state: state, value: number) => number
@@ -111,6 +120,7 @@ export type blockAPI = {
 export type api = {
     NumberUtils: NumberUtils,
     MutableRecordUtils: MutableRecordUtils,
+    NullableUtils: NullableUtils,
 
     block: blockAPI,
     event: eventAPI,
@@ -121,4 +131,12 @@ export type api = {
     getLanguageDataByData: (state: state, data: any, key: number) => any,
     getCareerFeatureName: (api: api, state: state, blockName: blockName) => careerFeatureName,
     isOtherCharacterTypeApplied: (api: api, state: state, characterType: characterType, name: careerFeatureName) => boolean,
+    isUseCareerFeature: (state: state, fromName: string, careerFeatureName: careerFeatureName) => boolean,
+    getRealTotalCoin: (state: state) => number,
+//     /**
+//  * Represents a book.
+//  * @param state - The title of the book.
+//  * @param careerFeatureName - The author of the book.
+//  */
+    getCareerFeatureValue: (state: state, careerFeatureName: careerFeatureName) => careerFeatureValue,
 }
