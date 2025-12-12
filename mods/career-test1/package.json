@@ -22,7 +22,7 @@
         "webpack:watch": "cross-env NODE_ENV=development webpack --watch --config webpack.config.js",
         "webpack": "cross-env NODE_ENV=production webpack --config webpack.config.js",
         "webpack:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js",
-        "publish_dev": "gulp publish_local_env"
+        "publish_mod": "gulp publish_local_env"
     },
     "dependencies": {
         "career-protocol": "^0.0.1"
