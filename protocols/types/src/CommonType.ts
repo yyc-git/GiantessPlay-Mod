@@ -88,3 +88,82 @@ export enum usedGirlEnum {
 }
 
 export type usedGirl = usedGirlEnum | string
+
+export enum damageType {
+    // Normal,
+    // Direct,
+    // Range,
+
+    Direct,
+    Range,
+
+    Normal,
+    Heavy,
+    Weakness,
+    Crit,
+    // Miss,
+
+    Global,
+}
+
+
+export type vector2 = any
+
+export type vector3 = any
+
+export type box3 = any
+
+export type obb = any
+
+export type matrix4 = any
+
+export type quaternion = any
+
+export type gameObject = any
+
+export type material = any
+
+export type side = any
+
+export type blending = any
+
+export type color = any
+
+export type animationClip = any
+
+export type bufferGeometry = any
+
+
+
+export type phase = number
+
+export enum collisionPart {
+    BoundingBox = "BoundingBox",
+
+    LeftFoot = "LeftFoot",
+    RightFoot = "RightFoot",
+    LeftShank = "LeftShank",
+    RightShank = "RightShank",
+    LeftThigh = "LeftThigh",
+    RightThigh = "RightThigh",
+    TrigoneAndButt = "TrigoneAndButt",
+    LeftBreast = "LeftBreast",
+    RightBreast = "RightBreast",
+    // Body = "Body",
+    LeftUpperArm = "LeftUpperArm",
+    RightUpperArm = "RightUpperArm",
+    LeftLowerArm = "LeftLowerArm",
+    RightLowerArm = "RightLowerArm",
+    Head = "Head",
+
+    Torso = "Torso",
+
+    LeftHand = "LeftHand",
+    RightHand = "RightHand",
+}
+
+export type clothName = string
+
+export type damagePart = "身体" | clothName
+
+export type forceSize = number

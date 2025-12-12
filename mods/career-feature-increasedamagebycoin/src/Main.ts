@@ -1,6 +1,6 @@
 import { service, category } from "career-feature-protocol/src/service/ServiceType"
 import { state } from "career-feature-protocol/src/state/StateType"
-import { api } from "types/src/APIType"
+import { api, customEvent, handleDamageArmyEventNameUserData, handleDamageGiantessEventNameUserData } from "types/src/APIType"
 import { variableTextData, characterType, rate, getBlockService as getBlockServiceBlockManager, createBlockState as createBlockStateBlockManager } from "types/src/CommonType"
 
 export enum languageVariableKey {
@@ -18,7 +18,7 @@ let _getTextDataByVariable = (): variableTextData => {
     }
 }
 
-let _handleDamageHandlerForIncreaseDamageByCoin = (api: api, state, data) => {
+let _handleDamageHandlerForIncreaseDamageByCoin = (api: api, state: state, data: customEvent<handleDamageArmyEventNameUserData | handleDamageGiantessEventNameUserData>) => {
     let userData = api.NullableUtils.getExn(data.userData)
     let careerFeatureName_ = getName()
 
