@@ -1,4 +1,4 @@
-import { nullable, state, usedGirl } from "./CommonType"
+import { characterType, nullable, state, usedGirl } from "./CommonType"
 import { careerFeatureName } from "career-feature-protocol/src/service/ServiceType"
 import { blockName } from "./ModType"
 
@@ -119,5 +119,6 @@ export type api = {
     GiantessBuildUtils: GiantessBuildUtils,
 
     getLanguageDataByData: (state: state, data: any, key: number) => any,
-    getCareerFeatureName: (api: api, state: state, blockName: blockName) => careerFeatureName
+    getCareerFeatureName: (api: api, state: state, blockName: blockName) => careerFeatureName,
+    isOtherCharacterTypeApplied: (api: api, state: state, characterType: characterType, name: careerFeatureName) => boolean,
 }

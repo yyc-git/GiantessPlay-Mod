@@ -37,6 +37,9 @@ export let getBlockService: getBlockServiceBlockManager<
                     return api.NumberUtils.getRandomFloat(0.2, 1)
                 },
                 applyFunc: (state, characterType_, value, name) => {
+                    // for debug
+                    console.log("debug", characterType_, value, name)
+
                     switch (characterType_) {
                         case characterType.LittleMan:
                             state = api.LittleManBuildUtils.setHp(state, (state, hp) => {

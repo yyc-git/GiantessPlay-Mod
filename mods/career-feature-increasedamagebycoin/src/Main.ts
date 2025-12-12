@@ -43,7 +43,7 @@ export let getBlockService: getBlockServiceBlockManager<
             return {
                 name: getName(),
                 positive: true,
-                category: category.Number,
+                category: category.Mechanism,
                 characterType: characterType.Both,
                 rate: rate.Middle2,
                 getDescriptionFunc: (state, value) => {
@@ -53,6 +53,10 @@ export let getBlockService: getBlockServiceBlockManager<
                     return api.NumberUtils.getRandomFloat(0.0025, 0.01)
                 },
                 applyFunc: (state, characterType_, value, name) => {
+                    if (api.isOtherCharacterTypeApplied(api, state, characterType_, name)) {
+                        return Promise.resolve(state)
+                    }
+
                     state = api.event.onWithUserData(state, api.event.getHandleDamageArmyEventName(), _handleDamageHandlerForIncreaseDamageByCoin)
                     state = api.event.onWithUserData(state, api.event.getHandleDamageGiantessEventName(), _handleDamageHandlerForIncreaseDamageByCoin)
 
