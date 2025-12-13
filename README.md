@@ -12,7 +12,7 @@
 ## 准备开发环境
 
 - 安装 node.js
-- 执行 npm install && npm run bootstrap 即可
+- 根目录下执行 npm install && npm run bootstrap 即可
 
 
 ## 开发模组
@@ -70,7 +70,7 @@
 ## Prepare Development Environment
 
 - Install Node.js.
-- Run `npm install && npm run bootstrap`.
+- In the root directory, run `npm install && npm run bootstrap`.
 
 ## Develop Mods
 
