@@ -11,8 +11,8 @@
 
 ## 准备开发环境
 
-- 安装 node.js和yarn
-- 执行 yarn install && yarn bootstrap 即可
+- 安装 node.js
+- 执行 npm install && npm run bootstrap 即可
 
 
 ## 开发模组
@@ -27,7 +27,7 @@
 
 1.请在mods/文件夹中增加您的模组项目，具体可参考该文件下的模组项目
 
-2.加入模组项目后，可在根目录下执行yarn bootstrap，从而安装其依赖的npm
+2.加入模组项目后，可在根目录下执行npm run bootstrap，从而安装其依赖的npm
 
 
 
@@ -35,7 +35,7 @@
 
 1.填写package.json->mod字段，并将isPublic设为false，从而只可在调试模式中使用
 
-2.在该模组项目的根目录下，执行yarn webpack && yarn publish_mod，从而打包文件，并发布
+2.在该模组项目的根目录下，执行npm run webpack && npm run publish_mod，从而打包文件，并发布
 
 3.点击[进入](https://gts-play.cn?mod)来进入游戏（调试模式）
 
@@ -57,7 +57,7 @@
 
 1.填写package.json->mod字段，并将isPublic设为true
 
-2.在该模组项目的根目录下，执行yarn webpack && yarn publish_mod，从而打包文件，并发布
+2.在该模组项目的根目录下，执行npm run webpack && npm run publish_mod，从而打包文件，并发布
 
 
 
@@ -69,8 +69,8 @@
 
 ## Prepare Development Environment
 
-- Install Node.js and Yarn.
-- Run `yarn install && yarn bootstrap`.
+- Install Node.js.
+- Run `npm install && npm run bootstrap`.
 
 ## Develop Mods
 
@@ -81,12 +81,12 @@ Mods are located in the `mods/` folder. The protocols corresponding to mods (spe
 **Develop Your Own Mod**
 
 1. Add your mod project to the `mods/` folder. You can refer to the existing mod projects in that folder.
-2. After adding the mod project, you can run `yarn bootstrap` in the root directory to install its required npm dependencies.
+2. After adding the mod project, you can run `npm run bootstrap` in the root directory to install its required npm dependencies.
 
 ## Test Mods
 
 1. Fill in the `mod` field in `package.json` and set `isPublic` to `false` so that it is only usable in Debug Mode.
-2. In the root directory of the mod project, run `yarn webpack && yarn publish_mod` to bundle the files and publish the mod.
+2. In the root directory of the mod project, run `npm run webpack && npm run publish_mod` to bundle the files and publish the mod.
 3. Click [Enter](https://gts-play.cn?mod) to enter the game (Debug Mode).
 4. In Mods -> Mod Store, subscribe to the published mod.
 5. Enter a game scene to test the mod.
@@ -99,4 +99,4 @@ Mods are located in the `mods/` folder. The protocols corresponding to mods (spe
 ## Publish Mods
 
 1. Fill in the `mod` field in `package.json` and set `isPublic` to `true`.
-2. In the root directory of the mod project, run `yarn webpack && yarn publish_mod` to bundle the files and publish the mod.
+2. In the root directory of the mod project, run `npm run webpack && npm run publish_mod` to bundle the files and publish the mod.
