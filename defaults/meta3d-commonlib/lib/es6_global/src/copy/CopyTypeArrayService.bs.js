@@ -1,6 +1,6 @@
 
 
-import * as Js_typed_array from "./../../../../../../node_modules/rescript/lib/es6/js_typed_array.js";
+import * as Js_typed_array from "./../../../../../rescript/lib/es6/js_typed_array.js";
 import * as MutableSparseMap$Meta3dCommonlib from "../structure/sparse_map/MutableSparseMap.bs.js";
 
 function copyFloat32ArrayWithEndIndex(typeArr, endIndex) {

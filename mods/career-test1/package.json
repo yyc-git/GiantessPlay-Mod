@@ -8,8 +8,6 @@
         "displayName_cn": "职业（测试1）",
         "displayName_en": "Career(Test 1)",
         "repoLink": "https://github.com/yyc-git/GiantessPlay-Mod/tree/main/mods/career-test1",
-        "description_cn": "描述",
-        "description_en": "Description",
         "icon": "./dist/other/icon.jpg",
         "isPublic": true,
         "dependentMods": [

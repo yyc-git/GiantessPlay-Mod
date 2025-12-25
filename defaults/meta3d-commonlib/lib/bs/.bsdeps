@@ -1,21 +1,21 @@
 10.1.4
-D:\Github\GTS-Play\packages\meta3d-commonlib
-0
-bsconfig.json	0x1.a4b55126aafc7p+30
-src	0x1.a4b55127faf62p+30
-src\test	0x1.a4b55128dacfap+30
-src\test\bdd	0x1.a4b55128dbd5ap+30
-src\structure	0x1.a4b55128a7a42p+30
-src\structure\utils	0x1.a4b55128d8c38p+30
-src\structure\tuple	0x1.a4b55128d7bdap+30
-src\structure\sparse_map	0x1.a4b55128cc7bep+30
-src\structure\hash_map	0x1.a4b55128a8aa3p+30
-src\scene_graph	0x1.a4b551282ed07p+30
-src\scene_graph\component	0x1.a4b551284bbc9p+30
-src\scene_graph\component\test	0x1.a4b55128613a4p+30
-src\math	0x1.a4b5512827a69p+30
-src\log	0x1.a4b551281e709p+30
-src\copy	0x1.a4b551281d6abp+30
-src\contract	0x1.a4b55127faf62p+30
+D:\Github\GiantessPlay-Mod\node_modules\meta3d-commonlib
+1 -bs-package-output commonjs:lib\js:.bs.js -bs-package-output es6-global:lib\es6_global:.bs.js
+bsconfig.json	0x1.a5323e76e7a88p+30
+src	0x1.a5323e7746638p+30
+src\test	0x1.a5323e774769ap+30
+src\test\bdd	0x1.a5323e774769ap+30
+src\structure	0x1.a5323e7746638p+30
+src\structure\utils	0x1.a5323e7746638p+30
+src\structure\tuple	0x1.a5323e7746638p+30
+src\structure\sparse_map	0x1.a5323e77455d6p+30
+src\structure\hash_map	0x1.a5323e7744572p+30
+src\scene_graph	0x1.a5323e77403ecp+30
+src\scene_graph\component	0x1.a5323e77424afp+30
+src\scene_graph\component\test	0x1.a5323e77424afp+30
+src\math	0x1.a5323e773f389p+30
+src\log	0x1.a5323e773e326p+30
+src\copy	0x1.a5323e773e326p+30
+src\contract	0x1.a5323e773e326p+30
 ===
-D:\Github\GTS-Play\node_modules\rescript\win32\rescript.exe	0x1.a4e3c3ec46dc3p+30
+D:\Github\GiantessPlay-Mod\node_modules\rescript\win32\rescript.exe	0x1.a5325e79b3906p+30

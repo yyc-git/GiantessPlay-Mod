@@ -192,8 +192,9 @@ let publish = ([readFileSyncFunc, logFunc, errorFunc, readJsonFunc, generateFunc
 getModDataFunc, setModDataFunc, getFileIDFunc], packageFilePath, distFilePath, assetFileDir) => {
     return readJsonFunc(packageFilePath)
         .flatMap(packageJson => {
-        return initFunc().map(backendInstance => [backendInstance, packageJson]);
-    }).flatMap(([backendInstance, packageJson]) => {
+        let readme = readFileSyncFunc(path_1.default.join(path_1.default.dirname(packageFilePath), "README.md"), "utf-8");
+        return initFunc().map(backendInstance => [backendInstance, packageJson, readme]);
+    }).flatMap(([backendInstance, packageJson, readme]) => {
         _defineWindow();
         let modJson = packageJson.mod;
         let filePath = _getFileDirname() + "/" + packageJson.name + "_" + packageJson.version + ".arrayBuffer";
@@ -214,8 +215,9 @@ getModDataFunc, setModDataFunc, getFileIDFunc], packageFilePath, distFilePath, a
                 displayName_cn: (0, NullableUtils_1.getWithDefault)(modJson.displayName_cn, modJson.displayName_en),
                 displayName_en: (0, NullableUtils_1.getWithDefault)(modJson.displayName_en, modJson.displayName_cn),
                 repoLink: modJson.repoLink,
-                description_cn: (0, NullableUtils_1.getWithDefault)(modJson.description_cn, modJson.description_en),
-                description_en: (0, NullableUtils_1.getWithDefault)(modJson.description_en, modJson.description_cn),
+                // description_cn: getWithDefault(modJson.description_cn, modJson.description_en),
+                // description_en: getWithDefault(modJson.description_en, modJson.description_cn),
+                description: readme,
                 icon: _readBase64(modJson.icon),
                 lastPublishTime: moment_1.default.now(),
                 isPublic: modJson.isPublic,

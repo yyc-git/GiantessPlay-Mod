@@ -8,8 +8,6 @@
         "displayName_cn": "增加生命上限",
         "displayName_en": "Maximum health increased",
         "repoLink": "https://github.com/yyc-git/GiantessPlay-Mod/tree/main/mods/career-feature-increasefullhp",
-        "description_cn": "描述",
-        "description_en": "Description",
         "icon": "./dist/other/icon.jpg",
         "isPublic": true
     },

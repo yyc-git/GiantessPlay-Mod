@@ -226,8 +226,10 @@ export let publish = (
 ) => {
     return readJsonFunc(packageFilePath)
         .flatMap(packageJson => {
-            return initFunc().map(backendInstance => [backendInstance, packageJson])
-        }).flatMap(([backendInstance, packageJson]) => {
+            let readme = readFileSyncFunc(path.join(path.dirname(packageFilePath), "README.md"), "utf-8")
+
+            return initFunc().map(backendInstance => [backendInstance, packageJson, readme])
+        }).flatMap(([backendInstance, packageJson, readme]) => {
             _defineWindow()
 
             let modJson = packageJson.mod
@@ -265,8 +267,9 @@ export let publish = (
                     displayName_cn: getWithDefault(modJson.displayName_cn, modJson.displayName_en),
                     displayName_en: getWithDefault(modJson.displayName_en, modJson.displayName_cn),
                     repoLink: modJson.repoLink,
-                    description_cn: getWithDefault(modJson.description_cn, modJson.description_en),
-                    description_en: getWithDefault(modJson.description_en, modJson.description_cn),
+                    // description_cn: getWithDefault(modJson.description_cn, modJson.description_en),
+                    // description_en: getWithDefault(modJson.description_en, modJson.description_cn),
+                    description: readme,
                     icon: _readBase64(modJson.icon),
 
                     lastPublishTime: moment.now(),

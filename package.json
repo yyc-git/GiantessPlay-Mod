@@ -3,8 +3,7 @@
 	"private": true,
 	"license": "",
 	"scripts": {
-		"clean": "lerna clean",
-		"bootstrap": "lerna bootstrap"
+		"clean": "lerna clean"
 	},
 	"workspaces": [
 		"protocols/*",

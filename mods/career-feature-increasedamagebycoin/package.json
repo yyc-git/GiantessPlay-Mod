@@ -8,8 +8,6 @@
         "displayName_cn": "每持有金币，伤害增加",
         "displayName_en": "For every coins held, damage increases",
         "repoLink": "https://github.com/yyc-git/GiantessPlay-Mod/tree/main/mods/career-feature-increasedamagebycoin",
-        "description_cn": "描述",
-        "description_en": "Description",
         "icon": "./dist/other/icon.jpg",
         "isPublic": true
     },
