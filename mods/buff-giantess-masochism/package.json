@@ -1,11 +1,11 @@
 {
-    "name": "career-feature-increasefullhp",
+    "name": "buff-giantess-masochism",
     "version": "0.0.1",
     "main": "./dist/static/js/main.js",
     "mod": {
-        "protocolName": "career-feature-protocol",
+        "protocolName": "buff-protocol",
         "author": "Official",
-        "repoLink": "https://github.com/yyc-git/GiantessPlay-Mod/tree/main/mods/career-feature-increasefullhp",
+        "repoLink": "https://github.com/yyc-git/GiantessPlay-Mod/tree/main/mods/buff-giantess-masochism",
         "isPublic": true
     },
     "scripts": {
@@ -16,7 +16,7 @@
         "publish_mod": "gulp publish_local_env"
     },
     "dependencies": {
-        "career-feature-protocol": "^0.0.1"
+        "buff-protocol": "^0.0.1"
     },
     "devDependencies": {
         "@babel/node": "^7.8.7",
@@ -24,7 +24,6 @@
         "@babel/preset-typescript": "^7.13.0",
         "@types/jest": "^25.2.1",
         "@types/sinon": "^10.0.0",
-        "meta3d-tool-publish": "^1.3.0",
         "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
         "babel-jest": "^24.1.0",
         "jest": "^25.2.7",

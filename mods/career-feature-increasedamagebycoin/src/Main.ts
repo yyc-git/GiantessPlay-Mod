@@ -1,4 +1,4 @@
-import { service, category } from "career-feature-protocol/src/service/ServiceType"
+import { service } from "career-feature-protocol/src/service/ServiceType"
 import { state } from "career-feature-protocol/src/state/StateType"
 import { api, customEvent, handleDamageArmyEventNameUserData, handleDamageGiantessEventNameUserData } from "types/src/APIType"
 import { variableTextData, characterType, rate, getBlockService as getBlockServiceBlockManager, createBlockState as createBlockStateBlockManager } from "types/src/CommonType"
@@ -27,7 +27,7 @@ let _handleDamageHandlerForIncreaseDamageByCoin = (api: api, state: state, data:
     ) {
         userData = {
             ...userData,
-            damage: userData.damage * (1 + (api.getRealTotalCoin(state) / 50) * api.getCareerFeatureValue(state, careerFeatureName_))
+            damage: userData.damage * (1 + (api.getRealTotalCoin(state) / 50) * api.getCareerFeatureValue(state, userData.fromName, careerFeatureName_))
         }
     }
 
@@ -44,7 +44,6 @@ export let getBlockService: getBlockServiceBlockManager<
             return {
                 name: getName(),
                 positive: true,
-                category: category.Mechanism,
                 characterType: characterType.Both,
                 rate: rate.Middle2,
                 getDescriptionFunc: (state, value) => {

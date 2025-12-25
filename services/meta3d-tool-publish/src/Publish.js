@@ -218,7 +218,9 @@ getModDataFunc, setModDataFunc, getFileIDFunc], packageFilePath, distFilePath, a
                 // description_cn: getWithDefault(modJson.description_cn, modJson.description_en),
                 // description_en: getWithDefault(modJson.description_en, modJson.description_cn),
                 description: readme,
-                icon: _readBase64(modJson.icon),
+                icon: (0, NullableUtils_1.map)(icon => {
+                    return _readBase64(icon);
+                }, modJson.icon),
                 lastPublishTime: moment_1.default.now(),
                 isPublic: modJson.isPublic,
                 dependentMods: (0, NullableUtils_1.getWithDefault)(modJson.dependentMods, []),

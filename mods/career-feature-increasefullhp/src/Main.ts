@@ -1,4 +1,4 @@
-import { service, category } from "career-feature-protocol/src/service/ServiceType"
+import { service } from "career-feature-protocol/src/service/ServiceType"
 import { state } from "career-feature-protocol/src/state/StateType"
 import { variableTextData, characterType, rate, getBlockService as getBlockServiceBlockManager, createBlockState as createBlockStateBlockManager, usedGirlEnum } from "types/src/CommonType"
 
@@ -27,7 +27,6 @@ export let getBlockService: getBlockServiceBlockManager<
             return {
                 name: getName(),
                 positive: true,
-                category: category.Number,
                 characterType: characterType.Both,
                 rate: rate.Middle2,
                 getDescriptionFunc: (state, value) => {

@@ -167,3 +167,5 @@ export type clothName = string
 export type damagePart = "身体" | clothName
 
 export type forceSize = number
+
+export type name = string

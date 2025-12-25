@@ -12,7 +12,8 @@
         "isPublic": true,
         "dependentMods": [
             "career-feature-increasefullhp",
-            "career-feature-increasedamagebycoin"
+            "career-feature-increasedamagebycoin",
+            "career-feature-reducedamagebutincreasewhendamaged"
         ]
     },
     "scripts": {

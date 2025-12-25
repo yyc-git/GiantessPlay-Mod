@@ -1,4 +1,4 @@
-import { box3, characterType, collisionPart, damagePart, damageType, forceSize, matrix4, nullable, state, usedGirl, vector3 } from "./CommonType"
+import { box3, characterType, collisionPart, damagePart, damageType, forceSize, matrix4, name, nullable, state, usedGirl, vector3 } from "./CommonType"
 import { careerFeatureName, careerFeatureValue } from "career-feature-protocol/src/service/ServiceType"
 import { blockName } from "./ModType"
 import { weaponValue } from "./ValueType"
@@ -6,10 +6,18 @@ import { weaponValue } from "./ValueType"
 type NumberUtils = {
     convertDecimalToPercent: (value: number, digit?: number) => number,
     getRandomFloat: (start: number, end: number) => number,
+
+    randomSelect,
+    getRandomInteger,
 }
 
 type MutableRecordUtils = {
     createFromObject: (obj: Object) => Object,
+
+    remove,
+    set,
+    create,
+    get,
 }
 
 type NullableUtils = {
@@ -19,6 +27,8 @@ type NullableUtils = {
     getWithDefault: <T>(nullableValue: nullable<T>, default_: T) => T,
     getWithDefaultFunc: <T>(nullableValue: nullable<T>, getDefaultFunc: () => T) => T,
     getEmpty: <T>() => nullable<T>,
+
+    map,
 }
 
 type computeFunc = (state: state, value: number) => number
@@ -68,12 +78,12 @@ export type handleDamageGiantessEventNameUserData = {
 }
 
 export type eventAPI = {
-    // on: (state: state, name: eventName, handler: eventHandler) => state,
+    on: (state: state, name: eventName, handler: eventHandler) => state,
     onWithUserData: (state: state, name: eventName, handler: eventHandler) => state,
     // onForGetData: (state: state, name: eventName, handler: any) => state,
     // onByReadWriteState: (state: state, name: eventName, handler: any) => state,
     // // off: (state: state, name: eventName, handler: eventHandler) => state,
-    // offAll: (state: state, name: eventName) => state,
+    offAll: (state: state, name: eventName) => state,
     // trigger: any,
 
     getLoadWholeResourceEventName: () => eventName,
@@ -175,5 +185,16 @@ export type api = {
     //  * @param state - The title of the book.
     //  * @param careerFeatureName - The author of the book.
     //  */
-    getCareerFeatureValue: (state: state, careerFeatureName: careerFeatureName) => careerFeatureValue,
+    getCareerFeatureValue: (state: state, name: name, careerFeatureName: careerFeatureName) => careerFeatureValue,
+
+
+
+    addBuff,
+    getLittleManName,
+    girl,
+    littleMan,
+    findBuff,
+    isNotMaxForce,
+
+
 }

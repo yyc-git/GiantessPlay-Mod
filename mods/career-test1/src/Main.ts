@@ -17,10 +17,6 @@ let _getTextData = (): textData => {
     }
 }
 
-export let getIncreaseFullHpBlockName = () => "career-feature-increasefullhp"
-
-export let getIncreaseDamageByCoinBlockName = () => "career-feature-increasedamagebycoin"
-
 export let getBlockService: getBlockServiceBlockManager<
     service
 > = (api) => {
@@ -34,8 +30,9 @@ export let getBlockService: getBlockServiceBlockManager<
                 needGem: needGem.Middle,
 
                 getCareerFeatureData: (state) => api.MutableRecordUtils.createFromObject({
-                    [api.getCareerFeatureName(api, state, getIncreaseFullHpBlockName())]: 1,
-                    [api.getCareerFeatureName(api, state, getIncreaseDamageByCoinBlockName())]: 0.01
+                    [api.getCareerFeatureName(api, state, "career-feature-increasefullhp")]: 1,
+                    [api.getCareerFeatureName(api, state, "career-feature-increasedamagebycoin")]: 0.01,
+                    [api.getCareerFeatureName(api, state, "career-feature-reducedamagebutincreasewhendamaged")]: [1, 0.5, 20],
                 })
             }
         },

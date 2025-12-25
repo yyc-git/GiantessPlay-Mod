@@ -5,7 +5,7 @@ import fs from "fs"
 import path from "path"
 import { fileJson } from "meta3d";
 import moment from "moment";
-import { getWithDefault, isNullable } from "meta3d-commonlib-ts/src/NullableUtils";
+import { getWithDefault, isNullable, map } from "meta3d-commonlib-ts/src/NullableUtils";
 
 
 let _throwError = (msg: string): never => {
@@ -270,7 +270,9 @@ export let publish = (
                     // description_cn: getWithDefault(modJson.description_cn, modJson.description_en),
                     // description_en: getWithDefault(modJson.description_en, modJson.description_cn),
                     description: readme,
-                    icon: _readBase64(modJson.icon),
+                    icon: map(icon => {
+                        return _readBase64(icon)
+                    }, modJson.icon),
 
                     lastPublishTime: moment.now(),
 

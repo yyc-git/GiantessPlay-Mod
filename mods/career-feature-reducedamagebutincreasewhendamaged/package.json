@@ -1,12 +1,16 @@
 {
-    "name": "career-feature-increasefullhp",
+    "name": "career-feature-reducedamagebutincreasewhendamaged",
     "version": "0.0.1",
     "main": "./dist/static/js/main.js",
     "mod": {
         "protocolName": "career-feature-protocol",
         "author": "Official",
-        "repoLink": "https://github.com/yyc-git/GiantessPlay-Mod/tree/main/mods/career-feature-increasefullhp",
-        "isPublic": true
+        "repoLink": "https://github.com/yyc-git/GiantessPlay-Mod/tree/main/mods/career-feature-reducedamagebutincreasewhendamaged",
+        "isPublic": true,
+        "dependentMods": [
+            "buff-giantess-masochism",
+            "buff-littleman-masochism"
+        ]
     },
     "scripts": {
         "watch": "tsc -w -noEmit",
