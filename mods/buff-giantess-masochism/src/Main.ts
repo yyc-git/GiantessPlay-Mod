@@ -1,6 +1,5 @@
-import { createState } from "./script/Utils"
+import { createState, getBlockName } from "./script/Utils"
 import { addBuff, getBuffData, getCharacterType, getDescription, getImageSrc, getName, isPositive } from "./json/Data"
-import { getCount } from "./script/GetCount"
 import { bindEvent, unbindEvent } from "./script/Event"
 import { service } from "buff-protocol/src/service/ServiceType"
 import { state } from "buff-protocol/src/state/StateType"
@@ -30,7 +29,9 @@ export let getBlockService: getBlockServiceBlockManager<
         getImageSrc: getImageSrc,
         getDescription: getDescription,
 
-        getCount: getCount,
+        getCount: (api: api, usedGirl) => (state: state) => {
+            return api.getGiantessBuffCountBySuperPositionCount(api, state, usedGirl, getBlockName())
+        }
     }
 }
 

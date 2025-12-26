@@ -36,24 +36,12 @@ export let getBuffData = (api: api): singleBuffData => {
         getDescriptionFunc: (state, superPositionCount: number, value: number) => api.getLanguageDataByData(state, _getTextData(), languageKey.Description),
 
         applyFunc: (state, name, usedGirl, superPositionCount: number, sumValue: number) => {
-            state = api.block.setBlockState(state, getProtocolName(), getBlockName(),
-                {
-                    ...api.block.getBlockState<any>(state, getProtocolName(), getBlockName()),
-                    oldValue: api.NullableUtils.return_(api.MutableRecordUtils.set(api.block.getBlockState<any>(state, getProtocolName(), getBlockName()), usedGirl, superPositionCount))
-                }
-            )
+            state = api.saveGiantessBuffSuperPositionCount(api, state, usedGirl, getBlockName(), superPositionCount)
 
             return Promise.resolve(state)
         },
         deapplyFunc: (state, name, usedGirl, superPositionCount: number, sumValue: number) => {
-
-
-            state = api.block.setBlockState(state, getProtocolName(), getBlockName(),
-                {
-                    ...api.block.getBlockState<any>(state, getProtocolName(), getBlockName()),
-                    oldValue: api.MutableRecordUtils.remove(api.block.getBlockState<any>(state, getProtocolName(), getBlockName()), usedGirl)
-                }
-            )
+            state = api.restoreGiantessBuffSuperPositionCount(api, state, usedGirl, getBlockName())
 
             return Promise.resolve(state)
         },

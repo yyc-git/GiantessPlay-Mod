@@ -196,5 +196,13 @@ export type api = {
     findBuff,
     isNotMaxForce,
 
+    saveGiantessBuffSuperPositionCount,
+    restoreGiantessBuffSuperPositionCount,
+    getGiantessBuffCountBySuperPositionCount,
+
+    saveBuffSuperPositionCount,
+    restoreBuffSuperPositionCount,
+    getNonGiantessBuffCountBySuperPositionCount,
+
 
 }
