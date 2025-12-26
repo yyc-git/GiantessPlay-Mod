@@ -37,7 +37,7 @@ export let getBlockService: getBlockServiceBlockManager<
                 },
                 applyFunc: (state, characterType_, value, name) => {
                     // for debug
-                    console.log("debug", characterType_, value, name)
+                    console.log("debug3", characterType_, value, name)
 
                     switch (characterType_) {
                         case characterType.LittleMan:

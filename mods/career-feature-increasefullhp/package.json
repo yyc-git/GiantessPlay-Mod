@@ -1,6 +1,6 @@
 {
     "name": "career-feature-increasefullhp",
-    "version": "0.0.1",
+    "version": "0.0.4",
     "main": "./dist/static/js/main.js",
     "mod": {
         "protocolName": "career-feature-protocol",

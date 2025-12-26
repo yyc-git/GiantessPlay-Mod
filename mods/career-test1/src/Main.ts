@@ -30,7 +30,7 @@ export let getBlockService: getBlockServiceBlockManager<
                 needGem: needGem.Middle,
 
                 getCareerFeatureData: (state) => api.MutableRecordUtils.createFromObject({
-                    [api.getCareerFeatureName(api, state, "career-feature-increasefullhp")]: 1,
+                    [api.getCareerFeatureName(api, state, "career-feature-increasefullhp")]: 0.5,
                     [api.getCareerFeatureName(api, state, "career-feature-increasedamagebycoin")]: 0.01,
                     [api.getCareerFeatureName(api, state, "career-feature-reducedamagebutincreasewhendamaged")]: [1, 0.5, 20],
                 })
